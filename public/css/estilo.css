@@ -1,0 +1,199 @@
+body { 
+    margin: 0px;
+
+}
+#logo {
+    margin: 0px;
+    background-color: rgb(202, 202, 202);
+}
+#poke {
+    margin: 10px;
+    display: flex;
+    /* justify-content: space-around; */
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+#detail {
+    color: black;
+    margin-left: 100px;
+    display: flex;
+    justify-content: flex-end;
+    border-radius: 10px;
+    padding: 5px;
+}
+#home {
+    color: black;
+    margin-left: 20px;
+    display: flex;
+    justify-content: flex-end;
+    border-radius: 10px;
+    padding: 5px;
+}
+a:hover {
+    background-color:rgb(182, 182, 182);
+}
+
+
+
+
+
+#pokemo {
+    display: flex; 
+    justify-content: center;
+    border: 2px solid black;
+    border-radius: 10px;
+    margin: 20px; 
+}
+#pokem { 
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+#pokem ul {
+    background-color: white;
+    box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.4);
+    list-style: none;
+    margin: 10px;
+    margin-top: 40px;
+    padding: 30px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+h1 {
+    color: rgb(0, 0, 0);
+} 
+
+
+
+#poke ul li {
+    padding: 5px;
+}
+
+#poke ul {
+    background-color: white;
+    box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.4);
+    list-style: none;
+    margin: 10px;
+    margin-top: 40px;
+    padding: 30px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+#poke ul li {
+    padding: 5px;
+}
+
+#pokeul li img{
+    height: 200px;
+    width: 200px;
+}
+
+.nomee {
+    display: flex; 
+    justify-content: flex-start; 
+    color: black;
+    margin: 20px; 
+    padding: 5px;
+}
+.tipoo {
+    display: flex; 
+    justify-content: flex-start; 
+    color: black;
+    margin: 20px; 
+    padding: 5px;
+}
+.numeroo {
+    display: flex; 
+    justify-content: flex-start; 
+    color: black;
+    margin: 20px; 
+    padding: 5px;
+}
+.tipooo {
+    background-color: red;
+    display: flex; 
+    justify-content: flex-start;
+    margin: 20px; 
+    color: white;
+    border: 2px solid red;
+    padding: 5px;
+    border-radius: 10px;
+    height: 20px;
+}
+.imagee { 
+    display: flex; 
+    justify-content: center;
+    border: 2px solid black;
+    border-radius: 10px;
+    margin: 20px; 
+}
+.cada {
+    color: red;
+}
+.sucesso { 
+    color: red; 
+}
+.container {
+    display: flex;
+    flex-direction: row; 
+    flex-wrap: wrap; 
+    justify-content: flex-start; 
+}
+.botao {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+#cadastro { 
+    color: red;
+}
+
+#detalhes {
+    color: red;
+}
+
+
+
+
+#titulo {
+    color: red;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+section#message {
+    padding: 1.5rem;
+    background-color: rgb(221, 177, 177);
+    color: #004d04;
+    position: fixed;
+    top: 3rem;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: 600;
+  
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+  
+span#close {
+    font-size: 2rem;
+    cursor: pointer;
+    transition: .3s;
+}
+  
+span#close:hover{
+    color: rgb(255, 0, 0);
+    transform: scale(1.5);
+}

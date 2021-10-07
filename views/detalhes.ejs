@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+    <html lang="pt-br">
+        <head>
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link rel="stylesheet" href="/css/estilo.css">
+            <title>Detalhes Pokedéx</title>
+        </head>
+
+        <body>
+            <h1 id="detalhes">Detalhes do pokemon escolhido</h1>
+
+            <section id="pokem">
+                <ul>
+                    <div>
+                        <img id="pokemo" src="<%= pokedex.imagem  %>" alt="<%= pokedex.nome %>" width="330" height="330" />
+                            <li><strong>Descrição:</strong> <%= pokedex.descricao %> </li>
+                            <li><strong>Altura:</strong> <%= pokedex.altura %> M </li>
+                            <li><strong>Peso:</strong> <%= pokedex.peso %> Kg </li>
+                            <li><strong>Categoria:</strong> <%= pokedex.categoria %> </li>
+                            <li><strong>Habilidades:</strong> <%= pokedex.habilidades %> </li>
+                    </div>
+                </ul>
+            </section>
+
+            <script src="/js/script.js"></script>
+        </body>
+</html>
