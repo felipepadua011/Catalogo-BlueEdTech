@@ -5,15 +5,13 @@ const path = require("path");
 
 let listaprincipal = [
     {
-    imagem: "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/009.png",    
-    numero: 01,
-    nome: "Blastoise",
-    tipo: "Water",
-    altura: "1.6 m",
-    peso: "85.5 kg",
-    descricao: "It crushes its foe under its heavy body to cause fainting. In a pinch, it will withdraw inside its shell.",
-    categoria: "Shellfish",
-    habilidades: "Torrent"
+    imagem: "https://i.pinimg.com/originals/96/69/7e/96697ef35d09ed8c9855e82bd77e460b.jpg",    
+    nome: "Lancer Evolution X",
+    modelo: "X",
+    marca: "Mitsubishi",
+    velocidade: "293",
+    tipo: "De corrida",
+    informacoes: "Possui ar condicionado, capaciadade de até 5 pessoas dentro, porta malas espaçoso, vem com step reserva."
   }];
 
 app.set("view engine", "ejs");
@@ -36,45 +34,52 @@ app.get("/", (req, res) => {
 app.post("/", function (req, res) {
 })
 
+app.get("/lista", function (req, res) {
+
+    res.render("lista", {
+        message,
+        listaprincipal,
+    });
+    
+});
+
+app.get("/detalhes", function (req, res) {
+    res.render("detalhes", { det: "Cadastro dos Pokemons" });
+});
+
+app.get("/detalhes/:id", (req, res) => {
+  const id = req.params.id
+  const principal = listaprincipal[id]
+  res.render("detalhes.ejs", { principal })
+});
+
 app.get("/criar", function (req, res) {
     res.render("criar");
 });
 
-app.get("/criar/:id", (req, res) => {
-  const id = req.params.id
-  const principal = listaprincipal[id]
-  res.render("criar.ejs", { principal })
-});
-
-app.get("/new", function (req, res) {
-    res.render("criar");
-});
-
-app.get("/new" , function (req, res) {
-    const { imagem, numero, nome, tipo, altura, peso, descricao, categoria, habilidades } = req.body;
-    const site = { imagem:imagem, nome: nome, tipo: tipo, altura: altura, peso: peso, descricao: descricao, categoria: categoria, habilidades: habilidades };
-    res.render("resultado", site);
+app.get("/criar", function (req, res) {
+    const { imagem, nome, modelo, marca, velocidade, tipo, informacoes } = req.body;
+    const site = { imagem:imagem, nome: nome, modelo:modelo, marca:marca, velocidade:velocidade, tipo: tipo, informacoes: informacoes };
+    res.render("criar", site);
     res.render("/")
-})
-
+});
 
 app.get("/recebecar" , function (req, res) {
-    const {nome, tipo} = req.query;
-    res.send({nome: nome, tipo: tipo});
+    res.render("lista")
+    const {nome, marca} = req.query;
+    res.send({nome: nome, marca: marca});
 })
 
 app.post("/recebecar" , function (req, res) {
-    const { imagem, numero, nome, tipo, altura, peso, descricao, categoria, habilidades, } = req.body;
+    const { imagem, nome, modelo, marca, velocidade, tipo, informacoes, } = req.body;
     
-    let novocarro = { imagem: imagem,
-        numero: numero, 
+    let novocarro = { imagem:imagem, 
         nome: nome, 
+        modelo:modelo, 
+        marca:marca, 
+        velocidade:velocidade, 
         tipo: tipo, 
-        altura: altura, 
-        peso: peso, 
-        descricao: descricao, 
-        categoria: categoria, 
-        habilidades: habilidades
+        informacoes: informacoes
     }
 
     listaprincipal.push(novocarro)
@@ -85,7 +90,7 @@ app.post("/recebecar" , function (req, res) {
         message = ""
     }, 5000);
 
-    res.redirect("/");
+    res.redirect("/lista");
 })
 
 

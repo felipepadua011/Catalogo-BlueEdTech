@@ -9,17 +9,18 @@
         </head>
 
         <body>
-            <h1 id="detalhes">Detalhes do pokemon escolhido</h1>
+            <h1 id="detalhes">Detalhes do <%= principal.nome %> </h1>
 
             <section id="pokem">
                 <ul>
                     <div>
-                        <img id="pokemo" src="<%= pokedex.imagem  %>" alt="<%= pokedex.nome %>" width="330" height="330" />
-                            <li><strong>Descrição:</strong> <%= pokedex.descricao %> </li>
-                            <li><strong>Altura:</strong> <%= pokedex.altura %> M </li>
-                            <li><strong>Peso:</strong> <%= pokedex.peso %> Kg </li>
-                            <li><strong>Categoria:</strong> <%= pokedex.categoria %> </li>
-                            <li><strong>Habilidades:</strong> <%= pokedex.habilidades %> </li>
+                        <img id="pokemo" src="<%= principal.imagem  %>" alt="<%= principal.nome %>" width="730" height="440" />
+                            <li><strong>Nonme:</strong> <%= principal.nome %> </li>
+                            <li><strong>Modelo:</strong> <%= principal.modelo %> </li>
+                            <li><strong>Marca:</strong> <%= principal.marca %></li>
+                            <li><strong>Velocidade:</strong> <%= principal.velocidade %> Km/h</li>
+                            <li><strong>Tipo:</strong> <%= principal.tipo %> </li>
+                            <li><strong>Informações:</strong> <%= principal.informacoes%> </li>
                     </div>
                 </ul>
             </section>

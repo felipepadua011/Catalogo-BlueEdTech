@@ -1,9 +1,36 @@
+<style>
+                            @import url('http://fonts.cdnfonts.com/css/madfont-2');
+</style>
+<style>
+                            @import url('http://fonts.cdnfonts.com/css/shock-corridor');
+</style>
+<style>
+                            @import url('http://fonts.cdnfonts.com/css/mr-white');
+</style>
+<style>
+                            @import url('http://fonts.cdnfonts.com/css/cloudlike');
+</style>
+                
+                                         
+
 body { 
     margin: 0px;
 
 }
+#car { 
+    display: flex;
+    justify-content: flex-start;
+    margin: 18px;
+    font-family: 'Shock Corridor', sans-serif;
+    color: black;
+    font-size: 32px;                                            
+}
 #logo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     margin: 0px;
+    padding: 0px;
     background-color: rgb(202, 202, 202);
 }
 #poke {
@@ -13,27 +40,87 @@ body {
     align-items: flex-start;
     flex-wrap: wrap;
 }
-#detail {
+#in {
     color: black;
-    margin-left: 100px;
+    margin-left: 60px;
     display: flex;
     justify-content: flex-end;
     border-radius: 10px;
-    padding: 5px;
+    padding: 5px; 
+    text-decoration: none; 
+    font-family: 'Mr-White', sans-serif;
+    font-size: 30px;
 }
-#home {
+#cad {
     color: black;
-    margin-left: 20px;
+    margin-left: 60px;
+    display: flex;
+    justify-content: flex-end;
+    border-radius: 10px;
+    padding: 5px; 
+    text-decoration: none; 
+    font-family: 'Mr-White', sans-serif;
+    font-size: 30px;                                           
+}
+#qs {
+    color: black;
+    margin-left: 60px;
+    margin-right: 18px;
     display: flex;
     justify-content: flex-end;
     border-radius: 10px;
     padding: 5px;
+    text-decoration: none;  
+    font-family: 'Mr-White', sans-serif;
+    font-size: 30px;                                        
+}
+#vej {
+    margin: 30px;
+    color: white;
+    margin-left: 60px;
+    margin-right: 18px;
+    display: flex;
+    justify-content: flex-end;
+    border-radius: 10px;
+    padding: 5px;
+    text-decoration: none; 
 }
 a:hover {
     background-color:rgb(182, 182, 182);
 }
+#enter {
+    background-size: cover; 
+    background-image: url("https://cdn.discordapp.com/attachments/733368043782144120/795770242335899688/c54ffe1f93d7a4c77558e4bb42038cda.gif");
+}
+.container {
+    margin: 300px;
+    display: flex;
+    flex-direction: column; 
+    flex-wrap: wrap; 
+    align-items: center;
+    justify-content: flex-start; 
+    color: white;
 
-
+                                                
+}
+#bem { 
+    margin: 0px;
+    display: flex; 
+    font-size: 55px;
+    
+}
+#pod {
+    margin: 0px;
+    display: flex; 
+    font-size: 60px;
+    font-family: 'Shock Corridor', sans-serif;
+                                                
+}
+#dir {
+    margin: 0px;
+    display: flex; 
+    font-size: 30px;
+}
 
 
 
@@ -62,9 +149,7 @@ a:hover {
     flex-direction: column;
     justify-content: flex-start;
 }
-h1 {
-    color: rgb(0, 0, 0);
-} 
+
 
 
 
@@ -139,12 +224,7 @@ h1 {
 .sucesso { 
     color: red; 
 }
-.container {
-    display: flex;
-    flex-direction: row; 
-    flex-wrap: wrap; 
-    justify-content: flex-start; 
-}
+
 .botao {
     display: flex;
     flex-direction: row;
