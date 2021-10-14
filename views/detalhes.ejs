@@ -5,21 +5,40 @@
             <meta http-equiv="X-UA-Compatible" content="IE=edge">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <link rel="stylesheet" href="/css/estilo.css">
-            <title>Detalhes Pokedéx</title>
-        </head>
-
+            <title>Detalhes</title>
+            <link href="http://fonts.cdnfonts.com/css/madfont-2" rel="stylesheet">
+            <link href="http://fonts.cdnfonts.com/css/shock-corridor" rel="stylesheet">
+            <link href="http://fonts.cdnfonts.com/css/mr-white" rel="stylesheet">
+            <link href="http://fonts.cdnfonts.com/css/cloudlike" rel="stylesheet">
+    </head>
         <body>
+
+            <header id="logo">
+            <h1 id="car">Podium</h1>
+
+            <section class="botao">
+                <a id="in" href="/"><strong>Inicio</strong></a>
+                <a id="cad" href="/criar"><strong>Cadastrar</strong></a>
+                <a id="qs" href="/criar"><strong>Quem somos</strong></a>
+            </section>
+        </header>
+
             <h1 id="detalhes">Detalhes do <%= principal.nome %> </h1>
 
             <section id="pokem">
                 <ul>
                     <div>
                         <img id="pokemo" src="<%= principal.imagem  %>" alt="<%= principal.nome %>" width="730" height="440" />
-                            <li><strong>Nonme:</strong> <%= principal.nome %> </li>
+                            <li><strong>Nome:</strong> <%= principal.nome %> </li>
                             <li><strong>Modelo:</strong> <%= principal.modelo %> </li>
                             <li><strong>Marca:</strong> <%= principal.marca %></li>
                             <li><strong>Velocidade:</strong> <%= principal.velocidade %> Km/h</li>
                             <li><strong>Tipo:</strong> <%= principal.tipo %> </li>
+                            <li><strong>Motor:</strong> <%= principal.motor%> </li>
+                            <li><strong>Valor:</strong>R$ <%= principal.valor%> </li>
+                            <li><strong>Fabricado em:</strong> <%= principal.fabricadoem%> </li>
+                            <li><strong>Fabricado no:</strong> <%= principal.fabricadono%> </li>
+                            <li><strong>Câmbio:</strong> <%= principal.cambio%> </li>
                             <li><strong>Informações:</strong> <%= principal.informacoes%> </li>
                     </div>
                 </ul>
@@ -28,3 +47,7 @@
             <script src="/js/script.js"></script>
         </body>
 </html>
+
+
+
+        

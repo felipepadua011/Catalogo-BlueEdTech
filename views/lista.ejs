@@ -5,9 +5,23 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="/css/estilo.css">
-        <title>Pokedéx</title>
+        <link href="http://fonts.cdnfonts.com/css/madfont-2" rel="stylesheet">
+        <link href="http://fonts.cdnfonts.com/css/shock-corridor" rel="stylesheet">
+        <link href="http://fonts.cdnfonts.com/css/mr-white" rel="stylesheet">
+        <link href="http://fonts.cdnfonts.com/css/cloudlike" rel="stylesheet">
+        <title>Produtos</title>
     </head>
     <body>
+        <header id="logo">
+            <h1 id="car">Podium</h1>
+
+            <section class="botao">
+                <a id="in" href="/"><strong>Inicio</strong></a>
+                <a id="cad" href="/criar"><strong>Cadastrar</strong></a>
+                <a id="qs" href="/criar"><strong>Quem somos</strong></a>
+            </section>
+        </header>
+
         <article id="tudoo">
             <% if(message != ""){ %>
             <section id="message">
@@ -17,10 +31,12 @@
                 <section id="poke">
                     <% listaprincipal.forEach((item, id) => { %>
                     <ul> 
-                        <div><img class="imagee" src="<%= item.imagem %>" width="250" height="250" alt="imagem1"></div>
+                        <div><img class="imagee" src="<%= item.imagem %>" width="460" height="320" alt="imagem1"></div>
                         <div><p class="nomee"><strong>Nome: </strong> <%= item.nome %> <br> </p></div> 
                         <div><p class="tipoo"><strong>Tipo: </strong> <%= item.tipo %> <br> </p></div>
                         <div><a class="tipooo" href="/detalhes/<%=id%>">Ver Detalhes</a></div>
+                        <div><a class="tipooo" href="/editar/<%=id%>">Editar</a></div>
+                        <div><a class="tipooo" href="/deletar/<%=id%>">Deletar</a></div>
                     </ul>
                     <% }) %> 
                 </section>
