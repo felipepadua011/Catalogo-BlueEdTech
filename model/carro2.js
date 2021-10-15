@@ -1,26 +1,21 @@
 const { Sequelize, DataTypes } = require('sequelize');
 const database = require('./database');
 
-const carro = database.sequelize.define("carro", {
+const carro = database.sequelize.define("fabricacao", {
     id: {
         type: Sequelize.INTEGER,
         autoIncrement: true,
         allowNull: false,
         primaryKey: true,
     },
-    nome:{
-        type: Sequelize.STRING,
-        allowNull: false,
-    },
-    modelo:{
-        type: Sequelize.STRING,
-        allowNull: false,
-    },
-    marca:{
+    fabricadoem:{
         type: Sequelize.INTEGER,
         allowNull: false,
     },
-
+    fabricadono:{
+        type: Sequelize.INTEGER,
+        allowNull: false,
+    },
 },{
     freezeTableName: true,
     timestamps: false, 
@@ -28,3 +23,12 @@ const carro = database.sequelize.define("carro", {
     updatedAt: false,
 })
 module.exports = carro;
+
+
+
+
+
+
+    
+    
+    

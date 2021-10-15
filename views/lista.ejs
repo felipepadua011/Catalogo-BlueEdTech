@@ -25,20 +25,19 @@
         <article id="tudoo">
             <% if(message != ""){ %>
             <section id="message">
-                <p class="sucesso">Pokemon cadastrado com sucesso!</p>      <span id="close">&times;</span>
+                <p class="sucesso">Carro cadastrado com sucesso!</p>      <span id="close">&times;</span>
             </section>
             <% } %>
+
                 <section id="poke">
-                    <% listaprincipal.forEach((item, id) => { %>
                     <ul> 
-                        <div><img class="imagee" src="<%= item.imagem %>" width="460" height="320" alt="imagem1"></div>
-                        <div><p class="nomee"><strong>Nome: </strong> <%= item.nome %> <br> </p></div> 
-                        <div><p class="tipoo"><strong>Tipo: </strong> <%= item.tipo %> <br> </p></div>
-                        <div><a class="tipooo" href="/detalhes/<%=id%>">Ver Detalhes</a></div>
-                        <div><a class="tipooo" href="/editar/<%=id%>">Editar</a></div>
-                        <div><a class="tipooo" href="/deletar/<%=id%>">Deletar</a></div>
+                        
+                        <div><p class="nomee"><strong>Nome: </strong> <%= carro.nome %> <br> </p></div> 
+                        <div><p class="tipoo"><strong>Tipo: </strong> <%= carro.tipo %> <br> </p></div>
+                        <div><a class="tipooo" href="/detalhes/<%=carro.id%>">Ver Detalhes</a></div>
+                        <div><a class="tipooo" href="/editar/<%=carro.id%>">Editar</a></div>
+                        <div><a class="tipooo" href="/deletar/<%=carro.id%>">Deletar</a></div>
                     </ul>
-                    <% }) %> 
                 </section>
         </article>
 

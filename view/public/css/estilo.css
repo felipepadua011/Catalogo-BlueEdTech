@@ -1,21 +1,39 @@
 <style>
-                            @import url('http://fonts.cdnfonts.com/css/madfont-2');
+    @import url('http://fonts.cdnfonts.com/css/madfont-2');
 </style>
 <style>
-                            @import url('http://fonts.cdnfonts.com/css/shock-corridor');
+    @import url('http://fonts.cdnfonts.com/css/shock-corridor');
 </style>
 <style>
-                            @import url('http://fonts.cdnfonts.com/css/mr-white');
+    @import url('http://fonts.cdnfonts.com/css/mr-white');
 </style>
 <style>
-                            @import url('http://fonts.cdnfonts.com/css/cloudlike');
+    @import url('http://fonts.cdnfonts.com/css/cloudlike');
 </style>
+<style>
+    @import url('http://fonts.cdnfonts.com/css/comic-balloon');
+</style>
+                
                 
                                          
 
 body { 
     margin: 0px;
 
+}
+#carroo {
+    background-repeat:unset;
+    background-size: cover; 
+    background-image: url("https://cdn.discordapp.com/attachments/895482892627607602/898348829139697705/thumb2-binding-texture-4k-carbon-texture-gray-background-lines.jpg");
+}
+#carro {
+    display: flex;
+    justify-content: center;
+    margin: 18px;
+    font-family: 'Comic Balloon', sans-serif;
+    color: rgb(221, 221, 221);
+    font-size: 32px;  
+    flex-direction: column;
 }
 #car { 
     display: flex;
@@ -236,7 +254,7 @@ a:hover {
 }
 
 #detalhes {
-    color: red;
+    color: rgb(221, 221, 221);
 }
 
 

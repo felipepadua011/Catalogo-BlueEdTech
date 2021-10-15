@@ -1,22 +1,14 @@
 const { Sequelize, DataTypes } = require('sequelize');
 const database = require('./database');
 
-const carro = database.sequelize.define("carro", {
+const carro = database.sequelize.define("valor", {
     id: {
         type: Sequelize.INTEGER,
         autoIncrement: true,
         allowNull: false,
         primaryKey: true,
     },
-    nome:{
-        type: Sequelize.STRING,
-        allowNull: false,
-    },
-    modelo:{
-        type: Sequelize.STRING,
-        allowNull: false,
-    },
-    marca:{
+    valor:{
         type: Sequelize.INTEGER,
         allowNull: false,
     },
