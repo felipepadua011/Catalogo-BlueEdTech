@@ -8,6 +8,10 @@ const carro = database.sequelize.define("carro", {
         allowNull: false,
         primaryKey: true,
     },
+    imagem:{
+        type: Sequelize.TEXT,
+        allowNull: false,
+    },
     nome:{
         type: Sequelize.STRING,
         allowNull: false,

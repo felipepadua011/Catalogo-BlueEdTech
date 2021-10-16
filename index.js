@@ -33,33 +33,61 @@ app.get("/", (req, res) => {
 app.post("/", function (req, res) {
 })
 
+app.get("/quem", function (req, res) {
+    res.render("quem");
+})
+
+app.post("quem", function (req, res) {
+
+})
 app.get("/lista", async (req,res) => {
     const carro = await Carro.findAll();
-    const carro2 = await Carrofabricacao.findAll();
-    const carro3 = await Carrovalor.findAll();
     const carro4 = await Carrodescricao.findAll();
-    const carro5 = await Carromotor.findAll();
+
+    listaprincipal = [];
+
+    for (let item = 0; item < carro.length; item++) {
+        let novocarro = { imagem: carro[item].imagem,
+            id: carro[item].id,
+            nome: carro[item].nome, 
+            tipo: carro4[item].tipo,
+            }
+        listaprincipal.push(novocarro);
+      }
 
     res.render("lista", {
-        carro,
-        carro2,
-        carro3,
-        carro4,
-        carro5,
-        message,
-        listaprincipal,
+        message: message,
+        listaprincipal: listaprincipal
     });
-    
 });
 
 app.get("/detalhes", function (req, res) {
-    res.render("detalhes", { det: "Cadastro dos Pokemons" });
+    res.render("detalhes");
 });
 
-app.get("/detalhes/:id", (req, res) => {
-  const id = req.params.id
-  const principal = listaprincipal[id]
-  res.render("detalhes.ejs", { principal })
+app.get("/detalhes/:id", async (req,res) => {
+    const carro = await Carro.findByPk(req.params.id);
+    const carro2 = await Carrofabricacao.findByPk(req.params.id);
+    const carro3 = await Carrovalor.findByPk(req.params.id);
+    const carro4 = await Carrodescricao.findByPk(req.params.id);
+    const carro5 = await Carromotor.findByPk(req.params.id);
+
+    let novocarro = { imagem: carro.imagem,
+        nome: carro.nome, 
+        modelo: carro.modelo,  
+        marca: carro.marca, 
+        velocidade: carro2.velocidade,
+        tipo: carro4.tipo,
+        motor: carro5.motor,
+        valor: carro3.valor,
+        fabricadoem: carro2.fabricadoem,
+        fabricadono: carro2.fabricadono,
+        cambio: carro5.cambio,
+        informacoes: carro4.informacoes,
+    }
+
+    res.render("detalhes.ejs", { carro: novocarro });
+
 });
 
 app.get("/editar/:id", async (req,res) => {
@@ -80,18 +108,18 @@ app.post("/editar/:id", async (req,res) =>{
     const carro5 = await Carromotor.findByPk(req.params.id);
     const { imagem, nome, modelo, marca, velocidade, tipo, motor, valor, fabricadoem, fabricadono, cambio, informacoes } = req.body;
     
-    carro.nome;
-    carro.imagem;
-    carro.modelo;
-    carro.marca;
-    carro5.velocidade;
-    carro4.tipo;
-    carro5.motor;
-    carro3.valor;
-    carro2.fabricadoem;
-    carro2.fabricadono;
-    carro5.cambio;
-    carro4.informacoes;
+    carro.nome = nome;
+    carro.imagem = imagem;
+    carro.modelo = modelo;
+    carro.marca = marca;
+    carro5.velocidade = velocidade;
+    carro4.tipo = tipo;
+    carro5.motor = motor;
+    carro3.valor = valor;
+    carro2.fabricadoem = fabricadoem;
+    carro2.fabricadono = fabricadono;
+    carro5.cambio = cambio;
+    carro4.informacoes = informacoes;
 
     await Carro.save();
     await Carrofabricacao.save();
@@ -133,6 +161,7 @@ app.post("/criar", async (req,res) => {
         motor: motor, 
         cambio:cambio
     });
+    res.redirect("/lista");
 });
 
 app.get("/recebecar" , function (req, res) {
@@ -170,6 +199,11 @@ app.post("/recebecar" , function (req, res) {
 })
 
 app.get('/deletar/:id', async (req,res) => {
+
+    res.render("deletar")
+});
+
+app.post("/deletar/:id", async (req,res) => {
     const carro = await Carro.findByPk(req.params.id);
     const carro2 = await Carrofabricacao.findByPk(req.params.id);
     const carro3 = await Carrovalor.findByPk(req.params.id);
@@ -181,7 +215,7 @@ app.get('/deletar/:id', async (req,res) => {
     await Carrovalor.destroy();
     await Carrodescricao.destroy();
     await Carromotor.destroy();
-    res.render("deletar")
+    res.redirect("/lista")
 });
 
 db.conectado();

@@ -1,18 +1,14 @@
-<style>
-    @import url('http://fonts.cdnfonts.com/css/madfont-2');
-</style>
-<style>
-    @import url('http://fonts.cdnfonts.com/css/shock-corridor');
-</style>
-<style>
-    @import url('http://fonts.cdnfonts.com/css/mr-white');
-</style>
-<style>
-    @import url('http://fonts.cdnfonts.com/css/cloudlike');
-</style>
-<style>
-    @import url('http://fonts.cdnfonts.com/css/comic-balloon');
-</style>
+
+@import url('http://fonts.cdnfonts.com/css/madfont-2');
+
+@import url('http://fonts.cdnfonts.com/css/shock-corridor');
+
+@import url('http://fonts.cdnfonts.com/css/mr-white');
+
+@import url('http://fonts.cdnfonts.com/css/cloudlike');
+
+@import url('http://fonts.cdnfonts.com/css/comic-balloon');
+
                 
                 
                                          
@@ -20,6 +16,45 @@
 body { 
     margin: 0px;
 
+}
+.container {
+    margin: 10px;
+    display: flex;
+    /* justify-content: space-around; */
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+.nomes {
+    margin-left: 40px;
+}
+#top {
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 60px;
+}
+#toop {
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 60px;
+}
+#perf { 
+    margin-top: 50px;
+    margin-left: 100px;
+    margin-bottom: 30px;
+    border: 2px solid black;
+    border-radius: 450px;
+}
+#well {
+    background-color: blue;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+#fel {
+    background-color: rgb(134, 0, 0);
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
 }
 #carroo {
     background-repeat:unset;

@@ -21,27 +21,37 @@
                 <a id="qs" href="/criar"><strong>Quem somos</strong></a>
             </section>
         </header>
-        <h1><%= carro.marca %> </h1>
-        <article id="tudoo">
+
+
+
+        
+
+        <article id="tudoo" class="container">
+
+
             <% if(message != ""){ %>
+
             <section id="message">
                 <p class="sucesso">Carro cadastrado com sucesso!</p>      <span id="close">&times;</span>
             </section>
+
             <% } %>
 
+            <%   listaprincipal.forEach(item => { %>
                 <section id="poke">
-                    <ul> 
-                        
-                        <div><p class="nomee"><strong>Nome: </strong> <%= carro.nome %> <br> </p></div> 
-                        <div><p class="tipoo"><strong>Tipo: </strong> <%= carro.tipo %> <br> </p></div>
-                        <div><a class="tipooo" href="/detalhes/<%=carro.id%>">Ver Detalhes</a></div>
-                        <div><a class="tipooo" href="/editar/<%=carro.id%>">Editar</a></div>
-                        <div><a class="tipooo" href="/deletar/<%=carro.id%>">Deletar</a></div>
-                    </ul>
+                        <ul> 
+                            <img src= "<%= item.imagem %>">
+                            <div><p class="nomee"><strong>Nome: </strong> <%= item.nome %> <br> </p></div> 
+                            <div><p class="tipoo"><strong>Tipo: </strong> <%= item.tipo %> <br> </p></div>
+                            <div><a class="tipooo" href="/detalhes/<%=item.id%>">Ver Detalhes</a></div>
+                            <div><a class="tipooo" href="/editar/<%=item.id%>">Editar</a></div>
+                            <div><a class="tipooo" href="/deletar/<%=item.id%>">Deletar</a></div>
+                        </ul>
                 </section>
-        </article>
 
-        
+            <%  })  %>
+
+        </article>
 
         <script src="/js/script.js"></script>
     </body>
