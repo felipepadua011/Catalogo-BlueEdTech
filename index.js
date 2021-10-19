@@ -10,7 +10,6 @@ const Carrovalor = require('./model/carro3');
 const Carrodescricao = require('./model/carro4');
 const Carromotor = require('./model/carro5');
 
-
 let listaprincipal = [];
 
 app.set("view engine", "ejs");
@@ -121,11 +120,19 @@ app.post("/editar/:id", async (req,res) =>{
     carro5.cambio = cambio;
     carro4.informacoes = informacoes;
 
-    await Carro.save();
-    await Carrofabricacao.save();
-    await Carrovalor.save();
-    await Carrodescricao.save();
-    await Carromotor.save();
+    const carroCarro = await carro.save();
+    const carroFab = await carro2.save();
+    const carroValue = await carro3.save();
+    const carroDesc = await carro4.save();
+    const carroMot = await await carro5.save();
+
+    message = `Perfeito, carro editado com sucesso.`;
+
+    setTimeout(() => {
+        message = ""
+    }, 5000);
+
+    res.redirect("/lista");
 });
 
 
@@ -161,6 +168,13 @@ app.post("/criar", async (req,res) => {
         motor: motor, 
         cambio:cambio
     });
+
+    message ="Carro cadastrado com sucesso";
+    
+    setTimeout(() => {
+        message = ""
+    }, 5000);
+    
     res.redirect("/lista");
 });
 
@@ -198,24 +212,20 @@ app.post("/recebecar" , function (req, res) {
     res.redirect("/lista");
 })
 
-app.get('/deletar/:id', async (req,res) => {
 
-    res.render("deletar")
-});
-
-app.post("/deletar/:id", async (req,res) => {
+app.get("/deletar/:id", async (req,res) => {
     const carro = await Carro.findByPk(req.params.id);
     const carro2 = await Carrofabricacao.findByPk(req.params.id);
     const carro3 = await Carrovalor.findByPk(req.params.id);
     const carro4 = await Carrodescricao.findByPk(req.params.id);
     const carro5 = await Carromotor.findByPk(req.params.id);
 
-    await Carro.destroy();
-    await Carrofabricacao.destroy();
-    await Carrovalor.destroy();
-    await Carrodescricao.destroy();
-    await Carromotor.destroy();
-    res.redirect("/lista")
+    await carro.destroy();
+    await carro2.destroy();
+    await carro3.destroy();
+    await carro4.destroy();
+    await carro5.destroy();
+    res.redirect("/lista");
 });
 
 db.conectado();

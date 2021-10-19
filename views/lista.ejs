@@ -26,7 +26,7 @@
 
         
 
-        <article id="tudoo" class="container">
+        <article id="tudoo" class="fundo">
 
 
             <% if(message != ""){ %>
@@ -38,9 +38,9 @@
             <% } %>
 
             <%   listaprincipal.forEach(item => { %>
-                <section id="poke">
+                <section class="container2" id="poke">
                         <ul> 
-                            <img src= "<%= item.imagem %>">
+                            <img height="350" width="620" src= "<%= item.imagem %>">
                             <div><p class="nomee"><strong>Nome: </strong> <%= item.nome %> <br> </p></div> 
                             <div><p class="tipoo"><strong>Tipo: </strong> <%= item.tipo %> <br> </p></div>
                             <div><a class="tipooo" href="/detalhes/<%=item.id%>">Ver Detalhes</a></div>

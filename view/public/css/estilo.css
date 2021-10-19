@@ -15,7 +15,17 @@
 
 body { 
     margin: 0px;
-
+}
+.fundo {
+    margin: 0px;
+    background-repeat:unset;
+    background-size: cover; 
+    background-image: url("https://cdn.discordapp.com/attachments/895482892627607602/898348829139697705/thumb2-binding-texture-4k-carbon-texture-gray-background-lines.jpg");
+}
+.container2 {   
+    display: flex;
+    align-items: flex-start;
+    float: left;
 }
 .container {
     margin: 10px;
@@ -92,6 +102,7 @@ body {
     /* justify-content: space-around; */
     align-items: flex-start;
     flex-wrap: wrap;
+    flex-direction: row;
 }
 #in {
     color: black;
@@ -179,15 +190,14 @@ a:hover {
 
 #pokemo {
     display: flex; 
-    justify-content: center;
+    justify-content: flex-start;
     border: 2px solid black;
     border-radius: 10px;
     margin: 20px; 
 }
 #pokem { 
     display: flex;
-    justify-content: space-around;
-    align-items: center;
+    justify-content: flex-start;
     flex-wrap: wrap;
 }
 #pokem ul {
@@ -197,9 +207,9 @@ a:hover {
     margin: 10px;
     margin-top: 40px;
     padding: 30px;
-    border-radius: 15px;
+    border-radius: 15px; 
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: flex-start;
 }
 
@@ -207,11 +217,11 @@ a:hover {
 
 
 #poke ul li {
-    padding: 5px;
+    /* padding: 5px; */
 }
 
 #poke ul {
-    background-color: white;
+    background-color: rgb(206, 206, 206);
     box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.4);
     list-style: none;
     margin: 10px;
@@ -221,15 +231,6 @@ a:hover {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-}
-
-#poke ul li {
-    padding: 5px;
-}
-
-#pokeul li img{
-    height: 200px;
-    width: 200px;
 }
 
 .nomee {
@@ -304,7 +305,7 @@ a:hover {
 
 section#message {
     padding: 1.5rem;
-    background-color: rgb(221, 177, 177);
+    background-color: rgb(207, 207, 207);
     color: #004d04;
     position: fixed;
     top: 3rem;
