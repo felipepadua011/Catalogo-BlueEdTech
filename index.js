@@ -228,6 +228,5 @@ app.get("/deletar/:id", async (req,res) => {
     res.redirect("/lista");
 });
 
-db.conectado();
 
 app.listen(porta, () => console.log(`Servidor rodando em http://localhost:${porta}`));
